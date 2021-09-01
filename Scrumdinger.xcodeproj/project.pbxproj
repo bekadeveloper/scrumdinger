@@ -14,6 +14,7 @@
 		E97892AB26DFBC4600AE004E /* DailyScrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97892AA26DFBC4600AE004E /* DailyScrum.swift */; };
 		E97892AD26DFD59700AE004E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97892AC26DFD59700AE004E /* CardView.swift */; };
 		E97892AF26DFDDA800AE004E /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97892AE26DFDDA800AE004E /* Color+Codable.swift */; };
+		E97892B326DFEFBC00AE004E /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97892B226DFEFBC00AE004E /* ScrumsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E97892AA26DFBC4600AE004E /* DailyScrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScrum.swift; sourceTree = "<group>"; };
 		E97892AC26DFD59700AE004E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E97892AE26DFDDA800AE004E /* Color+Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
+		E97892B226DFEFBC00AE004E /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		E97892B026DFDDC900AE004E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E97892B226DFEFBC00AE004E /* ScrumsView.swift */,
 				E978929D26DF6F6800AE004E /* MeetingView.swift */,
 				E97892AC26DFD59700AE004E /* CardView.swift */,
 			);
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E978929E26DF6F6800AE004E /* MeetingView.swift in Sources */,
+				E97892B326DFEFBC00AE004E /* ScrumsView.swift in Sources */,
 				E97892AB26DFBC4600AE004E /* DailyScrum.swift in Sources */,
 				E97892AD26DFD59700AE004E /* CardView.swift in Sources */,
 				E97892AF26DFDDA800AE004E /* Color+Codable.swift in Sources */,
