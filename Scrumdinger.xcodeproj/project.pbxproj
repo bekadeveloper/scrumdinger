@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E90CAEF126E0EE1200779FE2 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CAEF026E0EE1200779FE2 /* DetailView.swift */; };
 		E978929C26DF6F6800AE004E /* ScrumdingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978929B26DF6F6800AE004E /* ScrumdingerApp.swift */; };
 		E978929E26DF6F6800AE004E /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978929D26DF6F6800AE004E /* MeetingView.swift */; };
 		E97892A026DF6F6900AE004E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E978929F26DF6F6900AE004E /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E90CAEF026E0EE1200779FE2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		E978929826DF6F6800AE004E /* Scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E978929B26DF6F6800AE004E /* ScrumdingerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumdingerApp.swift; sourceTree = "<group>"; };
 		E978929D26DF6F6800AE004E /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				E97892B226DFEFBC00AE004E /* ScrumsView.swift */,
+				E90CAEF026E0EE1200779FE2 /* DetailView.swift */,
 				E978929D26DF6F6800AE004E /* MeetingView.swift */,
 				E97892AC26DFD59700AE004E /* CardView.swift */,
 			);
@@ -169,6 +172,7 @@
 				E978929E26DF6F6800AE004E /* MeetingView.swift in Sources */,
 				E97892B326DFEFBC00AE004E /* ScrumsView.swift in Sources */,
 				E97892AB26DFBC4600AE004E /* DailyScrum.swift in Sources */,
+				E90CAEF126E0EE1200779FE2 /* DetailView.swift in Sources */,
 				E97892AD26DFD59700AE004E /* CardView.swift in Sources */,
 				E97892AF26DFDDA800AE004E /* Color+Codable.swift in Sources */,
 				E978929C26DF6F6800AE004E /* ScrumdingerApp.swift in Sources */,
