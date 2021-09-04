@@ -15,6 +15,12 @@ struct DailyScrum: Identifiable {
     var color: Color
     let id = UUID()
     
+    mutating func update(from data: Data) {
+        title = data.title
+        attendees = data.attendees
+        lengthInMinutes = Int(data.lengthInMinutes)
+        color = data.color
+    }
 }
 
 extension DailyScrum {

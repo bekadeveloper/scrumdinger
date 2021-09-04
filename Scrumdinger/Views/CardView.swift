@@ -33,6 +33,7 @@ struct CardView: View {
     }
 }
 
+#if DEBUG
 struct CardView_Previews: PreviewProvider {
     static let scrum = DailyScrum.data[0]
     
@@ -42,3 +43,4 @@ struct CardView_Previews: PreviewProvider {
             .previewLayout(.fixed(width: 400, height: 60))
     }
 }
+#endif

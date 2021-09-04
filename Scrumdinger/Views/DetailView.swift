@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct DetailView: View {
-    let scrum: DailyScrum
+    @Binding var scrum: DailyScrum
     @State private var isPresented = false
+    @State private var data: DailyScrum.Data = DailyScrum.Data()
     
     var body: some View {
         List {
             Section(header: Text("Meeting Info")) {
                 NavigationLink(destination: MeetingView()) {
                     Label("Start Meeting", systemImage: "mic.fill")
-                        .foregroundColor(.accentColor)
+                        .foregroundColor(scrum.color)
                         .font(.headline)
                         .accessibilityLabel(Text("Start meeting"))
                 }
@@ -45,25 +46,33 @@ struct DetailView: View {
             }
         }
         .navigationTitle(Text(scrum.title))
-        .foregroundColor(.black)
+        .foregroundColor(.primary)
         .listStyle(InsetGroupedListStyle())
-        .navigationBarItems(trailing: Button("Edit") { isPresented.toggle() })
+        .navigationBarItems(trailing: Button("Edit") {
+            data = scrum.data
+            isPresented = true
+        })
         .sheet(isPresented: $isPresented) {
             NavigationView {
-                EditView(scrum.data)
+                EditView(scrumData: $data)
                     .navigationTitle(scrum.title)
                     .navigationBarItems(leading: Button("Cancel") { isPresented = false },
-                                        trailing: Button("Done") { isPresented = false })
+                        trailing: Button("Done") {
+                            scrum.update(from: data)
+                            isPresented = false
+                        })
             }
         }
     }
 }
 
+#if DEBUG
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            DetailView(scrum: DailyScrum.data[0])
+            DetailView(scrum: .constant(DailyScrum.data[0]))
         }
 //        .preferredColorScheme(.dark)
     }
 }
+#endif

@@ -45,9 +45,11 @@ struct MeetingView: View {
     }
 }
 
+#if DEBUG
 struct MeetingView_Previews: PreviewProvider {
     static var previews: some View {
         MeetingView()
             .preferredColorScheme(.dark)
     }
 }
+#endif
