@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E90173AD26E4E37F00A22ADF /* MeetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90173AC26E4E37F00A22ADF /* MeetingHeaderView.swift */; };
 		E90CAEF126E0EE1200779FE2 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CAEF026E0EE1200779FE2 /* DetailView.swift */; };
 		E978929C26DF6F6800AE004E /* ScrumdingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978929B26DF6F6800AE004E /* ScrumdingerApp.swift */; };
 		E978929E26DF6F6800AE004E /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978929D26DF6F6800AE004E /* MeetingView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E90173AC26E4E37F00A22ADF /* MeetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingHeaderView.swift; sourceTree = "<group>"; };
 		E90CAEF026E0EE1200779FE2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		E978929826DF6F6800AE004E /* Scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E978929B26DF6F6800AE004E /* ScrumdingerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumdingerApp.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				E97892B226DFEFBC00AE004E /* ScrumsView.swift */,
 				E90CAEF026E0EE1200779FE2 /* DetailView.swift */,
 				E978929D26DF6F6800AE004E /* MeetingView.swift */,
+				E90173AC26E4E37F00A22ADF /* MeetingHeaderView.swift */,
 				E97892AC26DFD59700AE004E /* CardView.swift */,
 				E9AB2C6526E27C840031F7C3 /* EditView.swift */,
 			);
@@ -175,6 +178,7 @@
 				E978929E26DF6F6800AE004E /* MeetingView.swift in Sources */,
 				E97892B326DFEFBC00AE004E /* ScrumsView.swift in Sources */,
 				E9AB2C6626E27C840031F7C3 /* EditView.swift in Sources */,
+				E90173AD26E4E37F00A22ADF /* MeetingHeaderView.swift in Sources */,
 				E97892AB26DFBC4600AE004E /* DailyScrum.swift in Sources */,
 				E90CAEF126E0EE1200779FE2 /* DetailView.swift in Sources */,
 				E97892AD26DFD59700AE004E /* CardView.swift in Sources */,
@@ -237,13 +241,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -292,12 +297,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -312,7 +318,7 @@
 				DEVELOPMENT_TEAM = 867N93C454;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Scrumdinger/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,7 +340,7 @@
 				DEVELOPMENT_TEAM = 867N93C454;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Scrumdinger/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
