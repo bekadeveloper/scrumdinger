@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MeetingView: View {
+    @StateObject private var scrumTimer = ScrumTimer()
     @Binding var scrum: DailyScrum
     
     var body: some View {
@@ -15,25 +16,33 @@ struct MeetingView: View {
             RoundedRectangle(cornerRadius: 16)
                 .foregroundColor(scrum.color)
             VStack {
-                MeetingHeaderView(0, scrum.lengthInMinutes*60, color: scrum.color)
+                MeetingHeaderView(scrumTimer.secondsElapsed, scrumTimer.secondsRemaining, color: scrum.color)
                 
                 Circle()
                     .strokeBorder(lineWidth: 20)
+                    .overlay(
+                        VStack {
+                            Text(scrumTimer.activeSpeaker)
+                                .font(.title)
+                                .fontWeight(.semibold)
+                                .animation(.linear)
+                            Text("is speaking")
+                        }
+                    )
                 
-                HStack {
-                    Text("Speaker 1 of 3")
-                    Spacer()
-                    Button(action: {}) {
-                        Image(systemName: "forward.fill")
-                    }
-                    .accessibilityLabel(Text("Next speaker"))
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                }
+                MeetingFooterView(speakers: scrumTimer.speakers, skipSpeaker: scrumTimer.skipSpeaker)
             }
             .padding()
         }
         .padding()
         .foregroundColor(scrum.color.accessibleFontColor)
+        .onAppear {
+            scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
+            scrumTimer.startScrum()
+        }
+        .onDisappear {
+            scrumTimer.stopScrum()
+        }
     }
 }
 
