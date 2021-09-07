@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MeetingView: View {
-    @StateObject private var scrumTimer = ScrumTimer()
+    @EnvironmentObject var scrumTimer: ScrumTimer
     @Binding var scrum: DailyScrum
     
     var body: some View {
@@ -35,13 +35,11 @@ struct MeetingView: View {
             .padding()
         }
         .padding()
+        .padding(.vertical)
         .foregroundColor(scrum.color.accessibleFontColor)
         .onAppear {
             scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
             scrumTimer.startScrum()
-        }
-        .onDisappear {
-            scrumTimer.stopScrum()
         }
     }
 }
@@ -50,7 +48,8 @@ struct MeetingView: View {
 struct MeetingView_Previews: PreviewProvider {
     static var previews: some View {
         MeetingView(scrum: .constant(DailyScrum.data[0]))
-//            .preferredColorScheme(.dark)
+            .preferredColorScheme(.dark)
+            .environmentObject(ScrumTimer())
     }
 }
 #endif

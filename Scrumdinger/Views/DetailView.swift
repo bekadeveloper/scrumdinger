@@ -11,11 +11,15 @@ struct DetailView: View {
     @Binding var scrum: DailyScrum
     @State private var isPresented = false
     @State private var data: DailyScrum.Data = DailyScrum.Data()
+    @StateObject private var scrumTimer = ScrumTimer()
     
     var body: some View {
         List {
             Section(header: Text("Meeting Info")) {
-                NavigationLink(destination: MeetingView(scrum: $scrum)) {
+                NavigationLink(destination:
+                                MeetingView(scrum: $scrum)
+                                    .environmentObject(scrumTimer))
+                {
                     Label("Start Meeting", systemImage: "mic.fill")
                         .foregroundColor(scrum.color)
                         .font(.headline)
