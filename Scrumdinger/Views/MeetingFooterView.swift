@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct MeetingFooterView: View {
     let speakers: [ScrumTimer.Speaker]
     let skipSpeaker: () -> Void
-    
+        
     private var speakerNumber: Int? {
         guard let index = speakers.firstIndex(where: { !$0.isCompleted }) else { return nil }
         return index + 1

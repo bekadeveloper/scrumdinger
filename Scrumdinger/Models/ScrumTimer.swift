@@ -71,6 +71,7 @@ class ScrumTimer: ObservableObject {
     /// Advance the timer to the next speaker.
     func skipSpeaker() {
         changeToSpeaker(at: speakerIndex + 1)
+        speakerChangedAction?()
     }
 
     private func changeToSpeaker(at index: Int) {

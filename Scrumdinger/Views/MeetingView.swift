@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct MeetingView: View {
-    @EnvironmentObject var scrumTimer: ScrumTimer
+    @EnvironmentObject private var scrumTimer: ScrumTimer
     @Binding var scrum: DailyScrum
+    
+    var player: AVPlayer { AVPlayer.sharedDingPlayer }
     
     var body: some View {
         ZStack {
@@ -40,6 +43,10 @@ struct MeetingView: View {
         .onAppear {
             scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
             scrumTimer.startScrum()
+            scrumTimer.speakerChangedAction = {
+                player.seek(to: .zero)
+                player.play()
+            }
         }
     }
 }
