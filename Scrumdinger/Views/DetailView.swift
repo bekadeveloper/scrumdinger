@@ -17,7 +17,8 @@ struct DetailView: View {
         List {
             Section(header: Text("Meeting Info")) {
                 NavigationLink(destination:
-                                MeetingView(scrum: $scrum).environmentObject(scrumTimer))
+                                MeetingView(scrum: $scrum)
+                                .environmentObject(scrumTimer))
                 {
                     Label("Start Meeting", systemImage: "mic.fill")
                         .foregroundColor(scrum.color)

@@ -28,7 +28,7 @@ extension DailyScrum {
         var title: String = ""
         var attendees: [String] = []
         var lengthInMinutes: Double = 5.0
-        var color: Color = .init(.systemPink)
+        var color: Color = .init(.systemTeal)
     }
     
     var data: Data {
