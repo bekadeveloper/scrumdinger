@@ -9,8 +9,8 @@ import SwiftUI
 import AVFoundation
 
 struct MeetingView: View {
-    @EnvironmentObject private var scrumTimer: ScrumTimer
     @Binding var scrum: DailyScrum
+    @StateObject var scrumTimer = ScrumTimer()
     
     var player: AVPlayer { AVPlayer.sharedDingPlayer }
     
@@ -28,7 +28,7 @@ struct MeetingView: View {
                             Text(scrumTimer.activeSpeaker)
                                 .font(.title)
                                 .fontWeight(.semibold)
-                                .animation(.linear)
+                                .animation(.spring())
                             Text("is speaking")
                         }
                     )
@@ -41,12 +41,22 @@ struct MeetingView: View {
         .padding(.vertical)
         .foregroundColor(scrum.color.accessibleFontColor)
         .onAppear {
+            #if DEBUG
+            print("\nonAppear triggered\n")
+            #endif
             scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
             scrumTimer.startScrum()
             scrumTimer.speakerChangedAction = {
                 player.seek(to: .zero)
                 player.play()
             }
+        }
+        .onDisappear {
+            #if DEBUG
+            print("\nonDisappear triggered\n")
+            #endif
+            scrumTimer.stopScrum()
+            scrum.recordHistory(scrumTimer: scrumTimer)
         }
     }
 }
@@ -56,7 +66,6 @@ struct MeetingView_Previews: PreviewProvider {
     static var previews: some View {
         MeetingView(scrum: .constant(DailyScrum.data[0]))
             .preferredColorScheme(.dark)
-            .environmentObject(ScrumTimer())
     }
 }
 #endif

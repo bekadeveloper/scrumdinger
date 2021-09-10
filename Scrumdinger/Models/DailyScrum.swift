@@ -13,6 +13,7 @@ struct DailyScrum: Identifiable {
     var attendees: [String]
     var lengthInMinutes: Int
     var color: Color
+    var history: [History] = []
     let id = UUID()
     
     mutating func update(from data: Data) {
@@ -35,6 +36,25 @@ extension DailyScrum {
         Data(title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), color: color)
     }
 }
+
+extension DailyScrum {
+    mutating func recordHistory(scrumTimer: ScrumTimer) {
+        let newHistory = History(attendees: attendees, lengthInMinutes: scrumTimer.secondsElapsed / 60)
+        let calendar = Calendar(identifier: .gregorian)
+        let newDateComponents = calendar.dateComponents([.day, .month, .year], from: newHistory.date)
+        let day = newDateComponents.day
+        let month = newDateComponents.month
+        let year = newDateComponents.year
+        
+        if history.allSatisfy({
+            let dateComponents = calendar.dateComponents([.day, .month, .year], from: $0.date)
+            return dateComponents.day != day && dateComponents.month != month && dateComponents.year != year
+        }) {
+            history.insert(newHistory, at: 0)
+        }
+    }
+}
+
 
 #if DEBUG
 extension DailyScrum {
