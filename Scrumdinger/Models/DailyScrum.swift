@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DailyScrum: Identifiable {
+struct DailyScrum: Identifiable, Codable {
     var title: String
     var attendees: [String]
     var lengthInMinutes: Int

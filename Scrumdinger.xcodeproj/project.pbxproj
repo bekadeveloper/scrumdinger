@@ -24,6 +24,8 @@
 		E9AA44EA26E910F0007A8570 /* AVPlayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA44E926E910F0007A8570 /* AVPlayerExtension.swift */; };
 		E9AA44ED26E91328007A8570 /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = E9AA44EC26E91328007A8570 /* ding.wav */; };
 		E9AB2C6626E27C840031F7C3 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AB2C6526E27C840031F7C3 /* EditView.swift */; };
+		E9F095B826ECF73400941433 /* ScrumData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F095B726ECF73400941433 /* ScrumData.swift */; };
+		E9F095BB26ED127B00941433 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F095BA26ED127B00941433 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		E9AA44E926E910F0007A8570 /* AVPlayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerExtension.swift; sourceTree = "<group>"; };
 		E9AA44EC26E91328007A8570 /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
 		E9AB2C6526E27C840031F7C3 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		E9F095B726ECF73400941433 /* ScrumData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumData.swift; sourceTree = "<group>"; };
+		E9F095BA26ED127B00941433 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9F095BB26ED127B00941433 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,7 @@
 			children = (
 				E978929A26DF6F6800AE004E /* Scrumdinger */,
 				E978929926DF6F6800AE004E /* Products */,
+				E9F095B926ED127B00941433 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +134,7 @@
 				E97892AA26DFBC4600AE004E /* DailyScrum.swift */,
 				E99D6C5626E6080B005CCAAE /* ScrumTimer.swift */,
 				E901D43826EBA95000C5972D /* History.swift */,
+				E9F095B726ECF73400941433 /* ScrumData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -138,6 +145,14 @@
 				E9AA44EC26E91328007A8570 /* ding.wav */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E9F095B926ED127B00941433 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9F095BA26ED127B00941433 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +230,7 @@
 				E901D43926EBA95000C5972D /* History.swift in Sources */,
 				E9AB2C6626E27C840031F7C3 /* EditView.swift in Sources */,
 				E90173AD26E4E37F00A22ADF /* MeetingHeaderView.swift in Sources */,
+				E9F095B826ECF73400941433 /* ScrumData.swift in Sources */,
 				E97892AB26DFBC4600AE004E /* DailyScrum.swift in Sources */,
 				E930A4C926E6579500C9B79A /* MeetingFooterView.swift in Sources */,
 				E90CAEF126E0EE1200779FE2 /* DetailView.swift in Sources */,

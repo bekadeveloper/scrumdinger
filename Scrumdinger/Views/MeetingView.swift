@@ -42,7 +42,7 @@ struct MeetingView: View {
         .foregroundColor(scrum.color.accessibleFontColor)
         .onAppear {
             #if DEBUG
-            print("\nonAppear triggered\n")
+            print("onAppear triggered")
             #endif
             scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
             scrumTimer.startScrum()
@@ -53,7 +53,7 @@ struct MeetingView: View {
         }
         .onDisappear {
             #if DEBUG
-            print("\nonDisappear triggered\n")
+            print("onDisappear triggered")
             #endif
             scrumTimer.stopScrum()
             scrum.recordHistory(scrumTimer: scrumTimer)

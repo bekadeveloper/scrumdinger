@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct History: Identifiable {
+struct History: Identifiable, Codable {
     var attendees: [String]
     var lengthInMinutes: Int
     let date: Date
