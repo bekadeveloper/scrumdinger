@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct DailyScrum: Identifiable {
-    
     var title: String
     var attendees: [String]
     var lengthInMinutes: Int
     var color: Color
     var history: [History] = []
-    let id = UUID()
+    let id: UUID
+    
+    init(title: String, attendees: [String], lengthInMinutes: Int, color: Color, history: [History] = [], id: UUID = UUID()) {
+        self.title = title
+        self.attendees = attendees
+        self.lengthInMinutes = lengthInMinutes
+        self.color = color
+        self.history = history
+        self.id = id
+    }
     
     mutating func update(from data: Data) {
         title = data.title
